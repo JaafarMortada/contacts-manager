@@ -8,7 +8,7 @@ const Home = () => {
 
     const searchContacts = async () => {
         const response = await axios.get('http://127.0.0.1:8000/api/contacts', {
-            headers: { Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNjkxMjU2ODk1LCJleHAiOjE2OTEyNjA0OTUsIm5iZiI6MTY5MTI1Njg5NSwianRpIjoiVnIxSkUwR0M2VDRiaXVkViIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.AzEXSs5Jg8IjecHqG4sKUVz3WtDT4JjmUyLrX7WD5BA` }
+            headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         })
         setContacts(response.data.contacts)
         console.log(response.data.contacts)
