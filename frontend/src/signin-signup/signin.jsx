@@ -35,7 +35,7 @@ const Signin = () => {
               
               <div class="btn-link">
                   <Link to='/signup' className='go-sign-up'>Don't have an account?<br/>Create one here!</Link>
-                  <button type="button" className="signin-btn" id="signin-btn">Signin</button>
+                  <Link to='/home' type="button" className="signin-btn" id="signin-btn">Signin</Link>
               </div>
               </div>
             </div>        
