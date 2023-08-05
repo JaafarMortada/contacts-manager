@@ -20,7 +20,7 @@ const Home = () => {
         
         <div>
             <div className="cards">
-                <div class='container-header'>
+                <div className='container-header'>
                     <h1>Contacts</h1>
                     <button className="add-btn">Add New</button>
                 </div>
