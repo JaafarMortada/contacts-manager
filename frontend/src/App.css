@@ -312,3 +312,10 @@ h1, .add-btn {
   cursor: pointer;
 }
 
+.leaflet-container{
+  height: 50vh;
+  width: 50vw;
+  z-index: 0;
+  border-radius: 15px;
+  border: 3px solid #007bff;
+}
