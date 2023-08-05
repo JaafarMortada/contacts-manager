@@ -25,7 +25,7 @@ class ContactController extends Controller
     }
 
     function getContacts(){
-        $contacts = Contact::all();
+        $contacts = Contact::where('user_id', '=', Auth::id())->get();
         return response()->json(["contacts" => $contacts]);
     }
 
