@@ -34,11 +34,11 @@ const Signup = () => {
   return (
     <div className="container">
       <div className="form form-signup">
-        <div class="logo">
+        <div className="logo">
           <img src={logo} className="App-logo" alt="logo" />
           <span className="title">Signup</span>
         </div>
-        <div class="input-with-label">
+        <div className="input-with-label">
           <label>Enter your name:</label>
           <input
             name="name"
@@ -48,7 +48,7 @@ const Signup = () => {
             onChange={handleDataChange}
           />
         </div>
-        <div class="input-with-label">
+        <div className="input-with-label">
           <label>Enter your email:</label>
           <input
             name="email"
@@ -58,7 +58,7 @@ const Signup = () => {
             onChange={handleDataChange}
           />
         </div>
-        <div class="input-with-label">
+        <div className="input-with-label">
           <label>Enter your password:</label>
           <input
             name="password"
@@ -68,7 +68,7 @@ const Signup = () => {
             onChange={handleDataChange}
           />
         </div>
-        <div class="input-with-label">
+        <div className="input-with-label">
           <label>Verify your password:</label>
           <input
             type="password"
@@ -77,10 +77,10 @@ const Signup = () => {
             onChange={(e) => setVerpassword(e.target.value)}
           />
         </div>
-        <div class="btn-link">
+        <div className="btn-link">
           <button 
           type="button" 
-          class="signup-btn" 
+          className="signup-btn" 
           id="signup-btn"
           onClick={handleSubmit}
           >

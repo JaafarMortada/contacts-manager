@@ -35,11 +35,11 @@ const Signin = () => {
     return (
             <div className='container'>
               <div className='form'>
-              <div class="logo">
+              <div className="logo">
                 <img src={logo} className="App-logo" alt="logo" />
                 <span className="title">Signin</span>
               </div>
-              <div class="input-with-label">
+              <div className="input-with-label">
                   <label>Enter your email:</label>
                   <input 
                   name="email"
@@ -49,7 +49,7 @@ const Signin = () => {
                   onChange={handleDataChange}
                   />
               </div>
-              <div class="input-with-label">
+              <div className="input-with-label">
                   <label>Enter your password:</label>
                   <input 
                   name="password"
@@ -60,7 +60,7 @@ const Signin = () => {
                   />
               </div>
               
-              <div class="btn-link">
+              <div className="btn-link">
                   <Link to='/signup' className='go-sign-up'>Don't have an account?<br/>Create one here!</Link>
                   <button 
                   type="button" 
