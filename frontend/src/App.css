@@ -191,7 +191,7 @@ input:focus {
 
 .container-header{
     display: flex;
-    width: 100%;
+    width: 80vw;
     justify-content: space-between;
     align-items: center;
 }
@@ -307,4 +307,8 @@ h1, .add-btn {
   .empty h2 {
     font-size: 1.25rem;
   }
+
+.location{
+  cursor: pointer;
+}
 
