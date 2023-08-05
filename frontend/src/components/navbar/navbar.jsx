@@ -1,5 +1,4 @@
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
-import './styles.css'
 import logo from '../../CONTACT MANAGER.svg'
 export default function Navbar() {
   return (

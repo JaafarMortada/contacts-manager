@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../CONTACT MANAGER.svg';
-import './styles.css'
 
 const Signin = () => {
     const [email, setEmail] = useState('')

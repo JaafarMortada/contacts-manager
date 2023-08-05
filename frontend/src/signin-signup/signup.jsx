@@ -1,6 +1,5 @@
 import { useState } from "react";
 import logo from "../CONTACT MANAGER.svg";
-import "./styles.css";
 
 const Signup = () => {
   const [name, setName] = useState("");
