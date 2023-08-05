@@ -2,17 +2,20 @@ import Navbar from "./components/navbar/navbar";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import ContactCard from "./components/contactCard/contactCard";
-const API_url = 'http://www.omdbapi.com?apikey=36621c78' // testing 
+// const API_url = 'http://127.0.0.1:8000/api/' // testing 
 const Home = () => {
     const [contacts, setContacts] = useState([])
 
-    const searchContacts = async (title) => {
-        const response = await axios.get(`${API_url}&s=${title}`)
-        setContacts(response.data.Search)
+    const searchContacts = async () => {
+        const response = await axios.get('http://127.0.0.1:8000/api/contacts', {
+            headers: { Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNjkxMjU2ODk1LCJleHAiOjE2OTEyNjA0OTUsIm5iZiI6MTY5MTI1Njg5NSwianRpIjoiVnIxSkUwR0M2VDRiaXVkViIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.AzEXSs5Jg8IjecHqG4sKUVz3WtDT4JjmUyLrX7WD5BA` }
+        })
+        setContacts(response.data.contacts)
+        console.log(response.data.contacts)
     }
 
     useEffect(( () => {
-        searchContacts('batman')
+        searchContacts()
     }), [])
     return ( 
     <>
@@ -30,7 +33,7 @@ const Home = () => {
                 ? ( <div className="container-cards">
                     {
                         contacts.map((contact)=>(
-                            <ContactCard contact={contact}/>
+                            <ContactCard key={contact.id} contact={contact}/>
                         ))
                     }
                 </div> 
