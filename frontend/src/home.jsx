@@ -20,9 +20,11 @@ const Home = () => {
 
 
     const searchContacts = async () => {
-        const response = await axios.get('http://127.0.0.1:8000/api/contacts', {
-            headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
-        })
+        const response = await axios.get('http://127.0.0.1:8000/api/contacts'
+        // , {
+        //     headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+        // }
+        )
         setContacts(response.data.contacts)
     }
 
@@ -87,6 +89,12 @@ const Home = () => {
                 )
                 
             }
+            <Pagination 
+                    totalCards={contacts.length} 
+                    cardsPerPage={cardsPerPage} 
+                    setCurrentPage={setCurrentPage} 
+                    currentPage={currentPage}
+                    />
         </div>
         </div>
     </>

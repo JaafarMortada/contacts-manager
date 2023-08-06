@@ -26,14 +26,15 @@ const AddContact = () => {
       try {
         console.log(data)
         const response = await axios.post(
-          "http://127.0.0.1:8000/api/add_update_contact", data,
-          {
-            headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
-            }
+          "http://127.0.0.1:8000/api/add_update_contact", data
+          // ,{
+          //   headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+          //   }
         );
         const new_id = response.data.contact.id;
         if (new_id) {
-          navigate("/home");
+          // navigate("/home");
+          navigate("/");
         }
       } catch (e) {
         console.log(e);

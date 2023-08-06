@@ -15,7 +15,7 @@ class ContactController extends Controller
         }
 
         $contact->name = $request->name ? $request->name : $contact->name;
-        $contact->user_id = Auth::id();
+        // $contact->user_id = Auth::id();
         $contact->phone_number = $request->phone_number ? $request->phone_number : $contact->phone_number;
         $contact->latitude = $request->latitude ? $request->latitude : $contact->latitude;
         $contact->longitude = $request->longitude ? $request->longitude : $contact->longitude;
@@ -25,15 +25,16 @@ class ContactController extends Controller
     }
 
     function getContacts(){
-        $contacts = Contact::where('user_id', '=', Auth::id())->get();
+        // $contacts = Contact::where('user_id', '=', Auth::id())->get();
+        $contacts = Contact::all();
         return response()->json(["contacts" => $contacts]);
     }
 
-    function deleteContact($id){
-        if(Auth::id()){
-            $contact = Contact::find($id)->delete();
-            return response()->json(["success" => true]);
-        }
-        return response()->json(["success" => false]);
-    }
+    // function deleteContact($id){
+    //     if(Auth::id()){
+    //         $contact = Contact::find($id)->delete();
+    //         return response()->json(["success" => true]);
+    //     }
+    //     return response()->json(["success" => false]);
+    // }
 }
