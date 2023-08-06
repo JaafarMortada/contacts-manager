@@ -16,7 +16,7 @@ const Home = () => {
 
 
     const [currentPage, setCurrentPage] = useState(1)
-    const [cardsPerPage, setCardsPerPage] = useState(5)
+    const [cardsPerPage, setCardsPerPage] = useState(6)
 
 
     const searchContacts = async () => {

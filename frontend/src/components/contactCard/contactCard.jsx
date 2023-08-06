@@ -21,8 +21,8 @@ const ContactCard = ({ contact }) => {
             </div>
 
             <div>
-                <h3>{contact.name}</h3>
-                <h3> &#9742;:{contact.phone_number} </h3>
+                <h3> &#x1F464;: {contact.name}</h3>
+                <h3> &#9742;: {contact.phone_number} </h3>
                 <h3 className="location">🗺️ lat:{contact.latitude}, lng:{contact.longitude} </h3>
             </div>
             

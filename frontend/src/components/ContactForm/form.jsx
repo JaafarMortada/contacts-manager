@@ -54,7 +54,7 @@ const AddContact = () => {
     <>
     <Navbar/>
     <div className="container">
-      <div className="form form-signup">
+      <div className="form form-add">
         <div className="logo">
           <span className="title">Add new Contact</span>
         </div>
@@ -101,7 +101,7 @@ const AddContact = () => {
         <div className="btn-link">
           <button
             type="button"
-            className="signup-btn"
+            className="submit-btn"
             id="add-btn"
             onClick={handleSubmit2}
           >
