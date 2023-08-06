@@ -30,7 +30,10 @@ class ContactController extends Controller
     }
 
     function deleteContact($id){
-        $contact = Contact::find($id)->delete();
-        return response()->json(["success" => true]);
+        if(Auth::id()){
+            $contact = Contact::find($id)->delete();
+            return response()->json(["success" => true]);
+        }
+        return response()->json(["success" => false]);
     }
 }
