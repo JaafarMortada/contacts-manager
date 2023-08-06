@@ -247,8 +247,8 @@ h1, .add-btn {
 }
 
 .contact {
-  width: 400px;
-  height: 150px;
+  width: 30vw;
+  height: 23vh;
   margin: 1.5rem;
   background: rgba(157, 152, 152, 0.5);
   position: relative;
@@ -338,7 +338,7 @@ h1, .add-btn {
 
 .leaflet-container{
   height: 50vh;
-  width: 50vw;
+  width: 64vw;
   z-index: 0;
   border-radius: 15px;
   border: 3px solid #007bff;
