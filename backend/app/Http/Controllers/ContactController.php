@@ -8,6 +8,18 @@ use Illuminate\Support\Facades\Auth;
 class ContactController extends Controller
 {
     function addOrUpdateContact(Request $request, $id = "add"){
+        try{
+        $this->validate($request, [
+        'name' => 'required|string|max:255', 
+        'phone_number' => 'required| string | max: 255', 
+        'longitude' => 'required|numeric', 
+        'latitude' => 'required|numeric',
+        ]);
+        } catch (\Throwable $e) {
+            return response()->json(["contact" => 'failed']);
+        }
+       
+        
         if($id == "add"){
             $contact = new Contact;
         }else{
