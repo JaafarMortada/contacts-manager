@@ -101,6 +101,17 @@ const AddContact = () => {
         <div className="btn-link">
           <button
             type="button"
+            className="back-btn"
+            id="back-btn"
+            onClick={ () => {
+              navigate('/')
+            }
+            }
+          >
+            Back Home
+          </button>
+          <button
+            type="button"
             className="submit-btn"
             id="add-btn"
             onClick={handleSubmit2}
