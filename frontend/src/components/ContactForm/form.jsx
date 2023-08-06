@@ -35,6 +35,14 @@ const AddContact = () => {
         if (new_id) {
           // navigate("/home");
           navigate("/");
+        } else if (response.data.contact === "failed"){
+          const add_btn = document.getElementById("add-btn")
+          add_btn.innerHTML = 'Failed'
+          add_btn.style.color = 'rgb(228, 73, 73)'
+          setTimeout(() => { 
+            add_btn.innerHTML = 'Add Contact' 
+            add_btn.style.color = 'rgb(48, 48, 48)'
+          }, 3000)
         }
       } catch (e) {
         console.log(e);
