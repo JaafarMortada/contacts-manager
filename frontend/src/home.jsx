@@ -57,7 +57,7 @@ const Home = () => {
                 )
                 
             }
-            <MapContainer center={[50, -1]} zoom={13}>
+            <MapContainer center={[33.89, 35.50]} zoom={13}>
                 <TileLayer 
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -65,8 +65,8 @@ const Home = () => {
                 {
                     contacts.map((contact)=>(
                         <Marker position={[contact.latitude, contact.longitude]} icon={myMarker} key={contact.id}>
-                            <Popup>
-                            A pretty CSS3 popup. <br /> Easily customizable.
+                            <Popup className="map-popup">
+                            {contact.name}<br/>{contact.phone_number}
                             </Popup>
                         </Marker>
                     ))
