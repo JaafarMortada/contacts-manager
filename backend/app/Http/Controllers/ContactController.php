@@ -38,7 +38,7 @@ class ContactController extends Controller
 
     function getContacts(){
         // $contacts = Contact::where('user_id', '=', Auth::id())->get();
-        $contacts = Contact::all();
+        $contacts = Contact::orderBy('id', 'desc')->get();
         return response()->json(["contacts" => $contacts]);
     }
 
