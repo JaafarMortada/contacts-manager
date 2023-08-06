@@ -6,7 +6,7 @@ import ContactCard from "./components/contactCard/contactCard";
 import { MapContainer, TileLayer, Popup, Marker } from "react-leaflet";
 import "leaflet/dist/leaflet.css"
 import { Icon } from "leaflet";
-
+import { useNavigate } from "react-router-dom"
 const Home = () => {
     const myMarker = new Icon({
         iconUrl: "https://img.icons8.com/?size=512&id=PZTTDl8ML4vy&format=png",
@@ -23,8 +23,10 @@ const Home = () => {
     useEffect(( () => {
         searchContacts()
     }), [])
-
-
+    const navigate = useNavigate();
+    const goToAddForm = () => {
+        navigate('/AddContact')
+    }
 
     return ( 
     <>
@@ -34,7 +36,7 @@ const Home = () => {
             <div className="cards">
                 <div className='container-header'>
                     <h1>Contacts</h1>
-                    <button className="add-btn">Add New</button>
+                    <button className="add-btn" onClick={goToAddForm}>Add New</button>
                 </div>
                 {/* <TheMap/> */}
             {
