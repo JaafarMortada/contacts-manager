@@ -2,22 +2,15 @@ import Navbar from "./components/navbar/navbar";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import ContactCard from "./components/contactCard/contactCard";
-// const API_url = 'http://127.0.0.1:8000/api/' // testing 
-import { MapContainer, TileLayer, Popup, Marker } from "react-leaflet";
-import "leaflet/dist/leaflet.css"
-import { Icon } from "leaflet";
 import { useNavigate } from "react-router-dom"
 import Pagination from "./pagination";
+import MyMap from "./components/map/mapContainer";
 const Home = () => {
-    const myMarker = new Icon({
-        iconUrl: "https://img.icons8.com/?size=512&id=PZTTDl8ML4vy&format=png",
-        iconSize: [38, 38]})
+    
     const [contacts, setContacts] = useState([])
 
-
     const [currentPage, setCurrentPage] = useState(1)
-    const [cardsPerPage, setCardsPerPage] = useState(6)
-
+    const [cardsPerPage, setCardsPerPage] = useState(10)
 
     const searchContacts = async () => {
         const response = await axios.get('http://127.0.0.1:8000/api/contacts'
@@ -57,21 +50,7 @@ const Home = () => {
                     />
                     <button className="add-btn" onClick={goToAddForm}>Add New</button>
                 </div>
-                <MapContainer center={[33.89, 35.50]} zoom={13}>
-                <TileLayer 
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
-                {
-                    currentCards.map((contact)=>(
-                        <Marker position={[contact.latitude, contact.longitude]} icon={myMarker} key={contact.id}>
-                            <Popup className="map-popup">
-                            {contact.name}<br/>{contact.phone_number}
-                            </Popup>
-                        </Marker>
-                    ))
-                }
-            </MapContainer>
+            <MyMap currentcards = {currentCards}/> 
             {
                 contacts?.length > 0
                 ? ( <div className="container-cards">
